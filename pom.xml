@@ -99,6 +99,10 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		
+    <finalName>banking-loan</finalName>
+
+
 	</build>
 
 </project>
