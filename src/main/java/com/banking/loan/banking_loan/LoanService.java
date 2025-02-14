@@ -10,5 +10,6 @@ public interface LoanService {
 	String UpdateLoan(Long loanId,Loan loan);
 	String deleteLoanByID(Long loanId);
 	List<Loan> findByAccount(Long accountNumber);
+	boolean deleteByaccnumber(Integer accountNumber);
 
 }

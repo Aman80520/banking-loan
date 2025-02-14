@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class LoanServiceImpl implements LoanService {
@@ -58,6 +59,17 @@ public class LoanServiceImpl implements LoanService {
 	public List<Loan> findByAccount(Long accountNumber) {
 		List<Loan> byAccountNumber = loanRepository.findByAccountNumber(accountNumber);
 		return byAccountNumber;
+	}
+
+	@Override
+	@Transactional
+	public boolean deleteByaccnumber(Integer accountNumber) {
+		Loan deleteByAcc = loanRepository.deleteByAccountNumber(accountNumber);
+		
+		if (deleteByAcc!=null) {
+			return true;
+		}
+		return false; 
 	}
 
 }

@@ -10,6 +10,8 @@ public interface LoanRepository extends JpaRepository<Loan, Long>{
 	
 	List<Loan> findByAccountNumber(Long accountNumber);
 	
+	Loan deleteByAccountNumber(Integer accountNumber);
+	
 	
 
 }
